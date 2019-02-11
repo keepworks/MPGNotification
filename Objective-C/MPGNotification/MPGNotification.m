@@ -161,7 +161,7 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     
     [super layoutSubviews];
     
-    static const CGFloat kPaddingX = 5;
+    static const CGFloat kPaddingX = 15;
     CGFloat notificationWidth = CGRectGetWidth(self.bounds);
     
     CGFloat maxWidth = 0.5 * (notificationWidth - kMaximumNotificationWidth);
@@ -173,7 +173,7 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     }
     
     // ICON IMAGE
-    static const CGFloat kIconPaddingY = 15;
+    static const CGFloat kIconPaddingY = 10;
     
     self.iconImageView.frame = CGRectMake(contentPaddingX + kPaddingX,
                                           kIconPaddingY + topSafeAreaInset,
@@ -237,8 +237,8 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     BOOL subtitleEmpty = (self.subtitle == nil || self.subtitle.length == 0);
     BOOL subtitleOneLiner = (expectedSubtitleSize.height < 25 && subtitleEmpty == NO);
     
-    CGFloat titleLabelPaddingY = (subtitleEmpty) ? 18 : (subtitleOneLiner) ? 13 : 3;
-    
+    CGFloat titleLabelPaddingY = (subtitleEmpty) ? 18 : (subtitleOneLiner) ? 8 : 1;
+
     self.titleLabel.frame = CGRectMake(textPaddingX,
                                        titleLabelPaddingY + topSafeAreaInset,
                                        textWidth,
@@ -270,7 +270,7 @@ static const CGFloat kColorAdjustmentLight = 0.35;
     }
     
     // COLORS!!
-    self.swipeHintView.backgroundColor = [self _darkerColorForColor:self.backgroundColor];
+    self.swipeHintView.backgroundColor = [self _lighterColorForColor:self.backgroundColor];
     self.titleLabel.textColor = self.titleColor;
     self.subtitleLabel.textColor = self.subtitleColor;
 }
